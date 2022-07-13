@@ -1,0 +1,29 @@
+{% include 'header.html' %}
+{% if current_user.id==1 %}
+<a href="{{url_for('agregar')}}"><button class="btn btn-success">AGREGAR</button></a> 
+<a href="{{url_for('usuarios')}}"><button class="btn btn-success">USUARIOS</button></a> 
+{% endif %}
+<table class="table table-light">
+    <thead class="thead-light">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Accion</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for codigo in codigos %}
+        <tr>
+            <th>{{codigo[0]}}</th>
+            <th>{{codigo[1]}}</th>
+            {% if current_user.id==1 %}
+            <th> <a class="btn btn-warning" href="/editar/{{codigo[0]}}" > ACTUALIZAR</a> <a class="btn btn-danger" href="/eliminar/{{codigo[0]}}" > ELIMINAR</a></th>
+            {% else %}
+            <th> <a class="btn btn-warning" href="archivos/{{codigo[2]}}" target="_blank" > LECTURA</a> <a class="btn btn-primary" href="archivos/{{codigo[2]}}" download> DESCARGAR</a></th> 
+            {% endif %}
+            
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% include 'footer.html' %}

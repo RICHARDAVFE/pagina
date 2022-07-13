@@ -1,0 +1,26 @@
+{% include 'header.html'   %}
+
+<body>
+
+
+
+    <section class="box animated backInUp ">
+
+        <form class="registro-registro" method="post" action="/registro" enctype="multipart/form-data">
+            <h1>Registrate</h1>
+            Nombre
+            <input type="text" name="nombre" id="username" placeholder="Nombre" required>
+            <br>
+            Correo electronico
+            <input type="email" name="correo" id="email" placeholder="Correo electronico" required>
+            <br>
+            Contraseña
+            <input type="password" name="password" id="password" placeholder="Contraseña" required>
+            <br>
+            <button type="submit"> REGISTRAR</button>
+            <p class="text-center">¿Ya tienes cuenta?<a href="{{url_for('login')}}"> Iniciar Sesión</a></p>
+
+        </form>
+    </section>
+    
+{% include 'footer.html'   %}

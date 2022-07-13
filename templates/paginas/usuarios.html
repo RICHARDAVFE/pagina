@@ -1,0 +1,23 @@
+{% include 'header.html'   %}
+<br>
+<h1 class="text">Usuarios</h1>
+<table class="table table-light">
+    <thead class="thead-light">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for usuario in usuarios %}
+        <tr>
+            <th>{{usuario[0]}}</th>
+            <th>{{usuario[1]}}</th>
+            <th>{{usuario[2]}}</th>
+            
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% include 'footer.html'   %}

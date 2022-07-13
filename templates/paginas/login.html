@@ -1,0 +1,35 @@
+{% include 'header.html'   %}
+<body>
+
+
+    <section class="box animated backInUp">
+        <form class="login-login " method="post" action="/login" enctype="multipart/form-data">
+            <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+            <h1>Inicie Sesion</h1>
+            Correo electronico
+            <input type="email" name="email" id="email" placeholder="Correo electronico" required>
+            <br>
+            Contraseña
+            <input type="password" name="password" id="password" placeholder="Contraseña" required>
+            <br>
+            <br>
+            {% with messages=get_flashed_messages() %}
+            {% if messages %}
+          
+            {% for message in messages %}
+            <div class="alert alert-primary alert-dismissible" role="alert">
+                <strong> {{message}}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+
+
+            {% endfor %}
+           
+            {% endif %}
+            {% endwith %}
+            <button type="submit">LOGIN</button>
+            <p class="text-center">¿Aun no estas registrado?<a href="{{url_for('registro')}}"> Registrate</a></p>
+
+        </form>
+    </section>
+{% include 'footer.html'   %}
