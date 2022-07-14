@@ -5,9 +5,9 @@ class Config:
 class DevelopmentConfig(Config):
     DEBUG = True
     MYSQL_DATABASE_HOST = 'us-cdbr-east-06.cleardb.net'
-    MYSQL_DATABASE_USER = 'b399f12758e8d9'
-    MYSQL_DATABASE_PASSWORD = '647f571f'
-    MYSQL_DATABASE_DB = 'heroku_69dc861d66128c1'
+    MYSQL_DATABASE_USER = 'bd9cd3ea9bc91f'
+    MYSQL_DATABASE_PASSWORD = '7a3f87d6'
+    MYSQL_DATABASE_DB = 'heroku_83179bffa1e45ff'
 
 
 config = {
