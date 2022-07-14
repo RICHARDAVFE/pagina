@@ -31,7 +31,7 @@
                     <a class="navbar-brand "  tabindex="-1" aria-disabled="true">    {{current_user.username}}</a>
                 </li>
                 <li class="nav navbar-nav navbar-right">
-                    {% if current_user.username %}
+                    {% if current_user.username=='' %}
                     <a class="navbar-brand " href="{{url_for('logout')}}"  tabindex="-1" aria-disabled="true"> SALIR</a>
                     {%else %}
                     <a class="navbar-brand " href="{{url_for('login')}}"  tabindex="-1" aria-disabled="true"> LOGIN</a>
